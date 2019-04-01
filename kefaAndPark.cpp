@@ -43,4 +43,5 @@ int main()
         create_edge(r,j);
     } 
     DFS(1,0,m);
+    cout << result << endl;
 }
