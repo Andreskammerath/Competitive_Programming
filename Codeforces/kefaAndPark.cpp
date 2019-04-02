@@ -17,15 +17,16 @@ void create_edge(int i, int j)
 
 void DFS(int i, int acum, int m)
 {
+	cout << i << endl;
     visited[i] = 1;
-    if(cats[i]) acum++;
-    if(cats[i]) acum = 0;
+    // if(cats[i]) acum++;
+    // if(!cats[i]) acum = 0;
     for(int v: nodos[i]){ //nodos adyacentes
         if(!visited[v]){
             DFS(v,acum,m);
         }
     }
-    if(nodos[i].size() < 3  && i != 1 && acum < m) result++;
+    // if(nodos[i].size() < 2  && i > 1 && acum < m) result++;
 }
  
 
@@ -35,13 +36,18 @@ int main()
     cin >> n >> m;
     for(int i = 0; i < n-1; ++i)
     {
-        cin >> cats[i];
+        cin >> cats[i+1];
     }
     for(int i = 0; i < n-1; ++i)
     {
         cin >> r >> j;
         create_edge(r,j);
-    } 
-    DFS(1,0,m);
+    }
+    visited[0] = 1;
+    for (int i = 0; i < count; ++i)
+    	 {
+    	 	/* code */
+    	 }	 
+    // DFS(1,0,m);
     cout << result << endl;
 }
